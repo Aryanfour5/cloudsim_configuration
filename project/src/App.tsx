@@ -323,7 +323,7 @@ function App() {
                 className="inline-flex items-center px-6 py-3 rounded-xl bg-blue-600 hover:bg-blue-700 text-white text-sm font-semibold shadow-lg transition-all"
               >
                 <DownloadCloud className="mr-2" size={18} />
-                Download All Chartss
+                Download All Chartsss
               </button>
             </div>
           </div>
