@@ -1,0 +1,34 @@
+name: Frontend CI
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  frontend:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: "16" # Replace with the version your app uses
+
+      - name: Install dependencies
+        run: npm install # Install frontend dependencies
+
+      - name: Run tests
+        run: npm test -- --coverage # Run the tests defined in your frontend (React) project
+
+      - name: Build the frontend
+        run: npm run build # Run the build command for React
+
+      - name: Lint the code (Optional)
+        run: npm run lint # Lint the frontend code if using eslint
